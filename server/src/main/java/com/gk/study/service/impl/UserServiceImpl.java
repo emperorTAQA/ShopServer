@@ -43,6 +43,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         queryWrapper.eq("username", user.getUsername());
         queryWrapper.eq("password", user.getPassword());
         queryWrapper.eq("role", "1");
+        System.out.println(queryWrapper.getSqlSelect());
         return userMapper.selectOne(queryWrapper);
     }
 

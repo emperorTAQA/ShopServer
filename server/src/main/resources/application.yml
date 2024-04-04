@@ -2,13 +2,14 @@
 server.port: 9100
 server.servlet.context-path: /api
 
-BASE_LOCATION: D:\projects\java_shop
-DB_NAME: shop
+BASE_LOCATION: /Users/leemulus/Desktop/BS/java_shop
 
-#BASE_LOCATION: C:\Users\Administrator\Desktop\java-shop
-#DB_NAME: java_shop
+spring :
+  datasource:
+    url: jdbc:mysql://localhost:3306/java_shop?setUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
 
- 
 File:
   uploadPath: ${BASE_LOCATION}\server\upload
 

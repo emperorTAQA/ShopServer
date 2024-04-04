@@ -14,6 +14,7 @@ public class MyConfig implements WebMvcConfigurer {
                 .allowedOriginPatterns("*") //所有地址都可以访问，也可以配置具体地址
                 .allowCredentials(true)
                 .allowedMethods("*");//"GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"
+
     }
 
     @Override

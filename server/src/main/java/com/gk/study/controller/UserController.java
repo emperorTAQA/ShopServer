@@ -65,7 +65,9 @@ public class UserController {
     // 普通用户登录
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     public APIResponse userLogin(User user){
-        user.setPassword(DigestUtils.md5DigestAsHex((user.getPassword() + salt).getBytes()));
+        String b = DigestUtils.md5DigestAsHex((user.getPassword() + salt).getBytes());
+        System.out.println("b   "+b);
+        user.setPassword(b);
         User responseUser =  userService.getNormalUser(user);
         if(responseUser != null) {
             return new APIResponse(ResponeCode.SUCCESS, "查询成功", responseUser);
