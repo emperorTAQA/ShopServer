@@ -1,6 +1,6 @@
 # 基于Java的商城网站系统设计与实现
 
-> *一直想做一款管理系统，看了很多优秀的开源项目但是发现没有合适的。于是利用空闲休息时间开始自己写了一套管理系统。现将部分源码开源，如需完整源码，可以联系客服微信购买：Java2048*
+> *一直想做一款管理系统，看了很多优秀的开源项目但是发现没有合适的。于是利用空闲休息时间开始自己写了一套管理系统。现将部分源码开源，如需完整源码，可以联系客服微信购买：leecumuluz20*
 
 
 ### 演示地址
@@ -90,8 +90,6 @@ npm run dev
 
 ### 付费咨询
 
-微信：Java2048
+微信：leecumuluz20
 
 ### 打赏作者
-
-<img src="https://raw.githubusercontent.com/geeeeeeeek/python_book/master/bookproject/upload/img/weixin-pay.jpg" width=400/>
