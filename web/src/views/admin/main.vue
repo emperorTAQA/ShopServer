@@ -19,7 +19,7 @@
           </a-menu-item>
           <a-menu-item key="user">
             <user-outlined/>
-            <span>用户管理</span>
+            <span>会员管理</span>
           </a-menu-item>
           <a-menu-item key="classification">
             <layout-outlined/>
