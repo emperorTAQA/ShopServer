@@ -1,5 +1,6 @@
 package com.gk.study.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -11,6 +12,7 @@ import java.util.Map;
 @Configuration
 @ConfigurationProperties
 @PropertySources({
+        // @PropertySource(value = "file:${spring.config.location}"),
         @PropertySource(value = "classpath:simp.yaml", factory = MultipleYamlPropertySourceFactory.class),
 })
 public class SimpConfig {
