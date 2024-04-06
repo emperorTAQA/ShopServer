@@ -2,6 +2,7 @@ package com.gk.study.controller;
 
 import com.gk.study.common.APIResponse;
 import com.gk.study.common.ResponeCode;
+import com.gk.study.config.SimpConfig;
 import com.gk.study.entity.Ad;
 import com.gk.study.permission.Access;
 import com.gk.study.permission.AccessLevel;
@@ -31,12 +32,12 @@ import java.util.UUID;
 public class AdController {
 
     private final static Logger logger = LoggerFactory.getLogger(AdController.class);
-
+    
     @Autowired
     AdService service;
 
-    @Value("${File.uploadPath}")
-    private String uploadPath;
+    @Autowired
+    private SimpConfig config;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public APIResponse list(){
@@ -91,7 +92,7 @@ public class AdController {
             String oldFileName = file.getOriginalFilename();
             String randomStr = UUID.randomUUID().toString();
             newFileName = randomStr + oldFileName.substring(oldFileName.lastIndexOf("."));
-            String filePath = uploadPath + File.separator + "image" + File.separator + newFileName;
+            String filePath = config.server.mapConf.get("uploadPath") + File.separator + "image" + File.separator + newFileName;
             File destFile = new File(filePath);
             if(!destFile.getParentFile().exists()){
                 destFile.getParentFile().mkdirs();

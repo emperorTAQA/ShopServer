@@ -18,7 +18,7 @@ export default ({ command }: ConfigEnv): UserConfig => {
   }
   return {
     base,
-    publicDir: "public", //静态资源服务的文件夹
+    publicDir: 'public', //静态资源服务的文件夹
     resolve: {
       alias: [
         {
@@ -34,7 +34,9 @@ export default ({ command }: ConfigEnv): UserConfig => {
     },
     // plugins
     plugins: createVitePlugins(isBuild),
-
+    build: {
+      outDir: 'static',
+    },
     // css
     css: {},
 

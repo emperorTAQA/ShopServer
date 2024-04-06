@@ -1,1 +1,9 @@
 .idea
+
+*.tar.gz
+
+server/upload/static/*
+
+web/static/*
+
+server/static/*

@@ -1,0 +1,10 @@
+server:
+  main: false
+  host: 0.0.0.0
+  name: ShopServer
+  port: 9100
+  type: java-http
+  staticPath: /Users/leemulus/Desktop/BS/java_shop/server/static/ # 静态资源
+  storage:  mysql@3306...... # 存储
+  mapConf:
+    uploadPath: /Users/leemulus/Desktop/BS/java_shop/server/upload/

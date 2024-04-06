@@ -1,15 +1,22 @@
 package com.gk.study.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class StaticResourceConfig implements WebMvcConfigurer {
+public class StaticResourceConfig extends WebMvcConfigurerAdapter {
+
+    @Autowired
+    private SimpConfig config;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/staticfiles/**")
-                .addResourceLocations("file:/Users/leemulus/Desktop/BS/java_shop/server/upload/");
+                .addResourceLocations("file:" + config.server.mapConf.get("uploadPath"));
+        registry.addResourceHandler("/web/**")
+                .addResourceLocations("file:" + config.server.staticPath);
+        super.addResourceHandlers(registry);
     }
 }

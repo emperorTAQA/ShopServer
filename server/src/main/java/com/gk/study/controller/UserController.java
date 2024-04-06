@@ -2,6 +2,7 @@ package com.gk.study.controller;
 
 import com.gk.study.common.APIResponse;
 import com.gk.study.common.ResponeCode;
+import com.gk.study.config.SimpConfig;
 import com.gk.study.entity.User;
 import com.gk.study.permission.Access;
 import com.gk.study.permission.AccessLevel;
@@ -35,8 +36,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @Value("${File.uploadPath}")
-    private String uploadPath;
+    @Autowired
+    private SimpConfig config;
+
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public APIResponse list(String keyword){
@@ -221,7 +223,7 @@ public class UserController {
             String oldFileName = file.getOriginalFilename();
             String randomStr = UUID.randomUUID().toString();
             newFileName = randomStr + oldFileName.substring(oldFileName.lastIndexOf("."));
-            String filePath = uploadPath + File.separator + "avatar" + File.separator + newFileName;
+            String filePath =  config.server.mapConf.get("uploadPath") + File.separator + "avatar" + File.separator + newFileName;
             File destFile = new File(filePath);
             if(!destFile.getParentFile().exists()){
                 destFile.getParentFile().mkdirs();
