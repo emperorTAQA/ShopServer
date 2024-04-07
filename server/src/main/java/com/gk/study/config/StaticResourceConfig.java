@@ -13,10 +13,14 @@ public class StaticResourceConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        String uploadPath = "file:" + config.server.mapConf.get("uploadPath");
+        String webPath = "file:" + config.server.staticPath;
+        System.out.println("uploadPath" + uploadPath);
+        System.out.println("webPath" + webPath);
         registry.addResourceHandler("/staticfiles/**")
-                .addResourceLocations("file:" + config.server.mapConf.get("uploadPath"));
+                .addResourceLocations(uploadPath);
         registry.addResourceHandler("/web/**")
-                .addResourceLocations("file:" + config.server.staticPath);
+                .addResourceLocations(webPath);
         super.addResourceHandlers(registry);
     }
 }
