@@ -1,5 +1,4 @@
 
-server.port: 9100
 server.servlet.context-path: /api
 
 spring :

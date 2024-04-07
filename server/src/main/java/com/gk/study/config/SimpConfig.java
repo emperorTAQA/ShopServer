@@ -20,6 +20,7 @@ public class SimpConfig {
         String simpProdYamlPath = System.getenv("SIMP_PROD_YAML");
         String simpTargetPort = System.getenv("SIMP_TARGET_PORT");
         String simpDevYamlPath = "simp.yaml";
+        System.out.println("simpTargetPort"+simpTargetPort);
         Properties properties = new Properties();
         if (simpProduction != null && !simpProduction.isEmpty()) {
             // Production environment, read from the production YAML file
@@ -32,11 +33,12 @@ public class SimpConfig {
             loadYaml(resource, properties);
         }
         this.server = new Server();
-        if(simpTargetPort.isEmpty()){ // 为空 则用默认配置端口
+        if(simpTargetPort == null || simpTargetPort.isEmpty()){ // 为空 则用默认配置端口
             this.server.setPort((Integer) properties.get("server.port"));
         }else{  // 否则 用指定端口
             this.server.setPort(Integer.valueOf(simpTargetPort));
         }
+        System.setProperty("server.port",this.server.port.toString());
         this.server.setName(properties.getProperty("server.name", "DefaultServerName"));
         this.server.setType(properties.getProperty("server.type", "DefaultServerType"));
         this.server.setStaticPath(properties.getProperty("server.staticPath", "/static"));
