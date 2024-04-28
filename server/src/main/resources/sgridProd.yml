@@ -1,0 +1,12 @@
+server:
+  name: ShopServer
+  port: 8520
+  host: 150.158.120.244
+  protocol: http
+  language: java
+config:
+  staticPath: /usr/app/server/SgridPackageServer/servants/server/static/ # 静态资源
+  uploadPath: /usr/app/server/SgridPackageServer/servants/server/upload/
+  mysql-addr: jdbc:mysql://150.158.120.244:3306/java_shop?setUnicode=true&characterEncoding=utf8
+  mysql-username: root
+  mysql-password: lzy20211121

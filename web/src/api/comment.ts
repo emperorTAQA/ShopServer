@@ -1,12 +1,12 @@
 import {get, post} from '/@/utils/http/axios';
 
 enum URL {
-    list = '/api/comment/list',
-    create = '/api/comment/create',
-    delete = '/api/comment/delete',
-    listThingComments = '/api/comment/listThingComments',
-    listUserComments = '/api/comment/listUserComments',
-    like = '/api/comment/like'
+    list = '/shopserver/comment/list',
+    create = '/shopserver/comment/create',
+    delete = '/shopserver/comment/delete',
+    listThingComments = '/shopserver/comment/listThingComments',
+    listUserComments = '/shopserver/comment/listUserComments',
+    like = '/shopserver/comment/like'
 }
 
 const listApi = async (params: any) => get<any>({url: URL.list, params: params, data: {}, headers: {}});

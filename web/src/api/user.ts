@@ -3,16 +3,16 @@ import { get, post } from '/@/utils/http/axios';
 import { UserState } from '/@/store/modules/user/types';
 // import axios from 'axios';
 enum URL {
-    login = '/api/user/login',
-    userList = '/api/user/list',
-    detail = '/api/user/detail',
-    create = '/api/user/create',
-    update = '/api/user/update',
-    delete = '/api/user/delete',
-    userLogin = '/api/user/userLogin',
-    userRegister = '/api/user/userRegister',
-    updateUserPwd = '/api/user/updatePwd',
-    updateUserInfo = '/api/user/updateUserInfo'
+    login = '/shopserver/user/login',
+    userList = '/shopserver/user/list',
+    detail = '/shopserver/user/detail',
+    create = '/shopserver/user/create',
+    update = '/shopserver/user/update',
+    delete = '/shopserver/user/delete',
+    userLogin = '/shopserver/user/userLogin',
+    userRegister = '/shopserver/user/userRegister',
+    updateUserPwd = '/shopserver/user/updatePwd',
+    updateUserInfo = '/shopserver/user/updateUserInfo'
 }
 interface LoginRes {
     token: string;

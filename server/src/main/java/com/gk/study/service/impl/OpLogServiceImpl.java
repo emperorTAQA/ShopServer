@@ -41,7 +41,7 @@ public class OpLogServiceImpl extends ServiceImpl<OpLogMapper, OpLog> implements
     @Override
     public List<OpLog> getLoginLogList() {
         QueryWrapper<OpLog> queryWrapper = new QueryWrapper();
-        queryWrapper.eq("re_url", "/api/user/userLogin");
+        queryWrapper.eq("re_url", "/shopserver/user/userLogin");
         queryWrapper.orderBy(true, false, "re_time");
         queryWrapper.last("limit 0, 1000"); // 前1000条
         return mapper.selectList(queryWrapper);

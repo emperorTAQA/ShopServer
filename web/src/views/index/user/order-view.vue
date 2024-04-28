@@ -120,7 +120,7 @@ const getOrderList= ()=> {
   userOrderListApi({userId: userId, status: orderStatus.value}).then(res => {
     res.data.forEach((item, index) => {
       if (item.cover) {
-        item.cover = BASE_URL + '/api/staticfiles/image/' + item.cover
+        item.cover = BASE_URL + '/shopserver/staticfiles/image/' + item.cover
       }
     })
     orderData.value = res.data

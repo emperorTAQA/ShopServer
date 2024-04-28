@@ -1,13 +1,13 @@
 import {get, post} from '/@/utils/http/axios';
 
 enum URL {
-    list = '/api/order/list',
-    create = '/api/order/create',
-    update = '/api/order/update',
-    delete = '/api/order/delete',
-    cancel = '/api/order/cancelOrder',
-    cancelUserOrder = '/api/order/cancelUserOrder',
-    userOrderList = '/api/order/userOrderList',
+    list = '/shopserver/order/list',
+    create = '/shopserver/order/create',
+    update = '/shopserver/order/update',
+    delete = '/shopserver/order/delete',
+    cancel = '/shopserver/order/cancelOrder',
+    cancelUserOrder = '/shopserver/order/cancelUserOrder',
+    userOrderList = '/shopserver/order/userOrderList',
 }
 
 const listApi = async (params: any) =>

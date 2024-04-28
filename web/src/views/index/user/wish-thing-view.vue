@@ -56,7 +56,7 @@ const getWishThingList =()=> {
   let userId = userStore.user_id
   userWishListApi({userId: userId}).then(res => {
     res.data.forEach(item => {
-      item.cover = BASE_URL + '/api/staticfiles/image/' + item.cover
+      item.cover = BASE_URL + '/shopserver/staticfiles/image/' + item.cover
     })
     wishData.value = res.data
   }).catch(err => {

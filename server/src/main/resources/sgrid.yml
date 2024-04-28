@@ -1,0 +1,14 @@
+server:
+  name: ShopServer
+  port: 8520
+  host: 127.0.0.1
+  protocol: http
+  language: java
+config:
+  redis-addr: 127.0.0.1:6379
+  redis-pass: ''
+  staticPath: /Users/leemulus/Desktop/备份/BS/java_shop/server/static/ # 静态资源
+  uploadPath: /Users/leemulus/Desktop/备份/BS/java_shop/server/upload/
+  mysql-addr: jdbc:mysql://localhost:3306/java_shop?setUnicode=true&characterEncoding=utf8
+  mysql-username: root
+  mysql-password: '123456'

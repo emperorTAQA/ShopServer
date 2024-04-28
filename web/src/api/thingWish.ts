@@ -3,9 +3,9 @@ import { get, post } from '/@/utils/http/axios';
 import { UserState } from '/@/store/modules/user/types';
 // import axios from 'axios';
 enum URL {
-    userWishList = '/api/thingWish/getUserWishList',
-    wish = '/api/thingWish/wish',
-    unWish = '/api/thingWish/unWish',
+    userWishList = '/shopserver/thingWish/getUserWishList',
+    wish = '/shopserver/thingWish/wish',
+    unWish = '/shopserver/thingWish/unWish',
 }
 
 const wishApi = async (data: any) => post<any>({ url: URL.wish, params: {}, data: data, headers: { 'Content-Type': 'multipart/form-data;charset=utf-8' } });

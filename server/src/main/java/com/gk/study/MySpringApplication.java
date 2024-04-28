@@ -1,8 +1,7 @@
 package com.gk.study;
 
-import com.gk.study.config.SimpConfig;
+import com.gk.study.sgrid.pub.SgridConf;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +16,7 @@ import org.springframework.context.annotation.Bean;
 public class MySpringApplication implements CommandLineRunner {
 
     @Autowired
-    private SimpConfig config;
+    private SgridConf config;
     public static void main(String[] args) {
         SpringApplication.run(MySpringApplication.class, args);
     }

@@ -174,7 +174,7 @@ const getList = () => {
         res.data.forEach((item: any, index: any) => {
           item.index = index + 1;
           if (item.image) {
-            item.imageUrl = BASE_URL + '/api/staticfiles/image/' + item.image
+            item.imageUrl = BASE_URL + '/shopserver/staticfiles/image/' + item.image
           }
         });
         data.list = res.data;

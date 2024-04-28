@@ -4,17 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import com.gk.study.sgrid.pub.SgridConf;
 
 @Configuration
 public class StaticResourceConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
-    private SimpConfig config;
+    private SgridConf config;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        String uploadPath = "file:" + config.server.mapConf.get("uploadPath");
-        String webPath = "file:" + config.server.staticPath;
+        String uploadPath = "file:" + config.config.get("uploadPath");
+        String webPath = "file:" + config.config.get("staticPath");
         System.out.println("uploadPath" + uploadPath);
         System.out.println("webPath" + webPath);
         registry.addResourceHandler("/staticfiles/**")

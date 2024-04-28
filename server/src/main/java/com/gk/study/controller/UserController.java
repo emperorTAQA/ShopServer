@@ -2,7 +2,7 @@ package com.gk.study.controller;
 
 import com.gk.study.common.APIResponse;
 import com.gk.study.common.ResponeCode;
-import com.gk.study.config.SimpConfig;
+import com.gk.study.sgrid.pub.SgridConf;
 import com.gk.study.entity.User;
 import com.gk.study.permission.Access;
 import com.gk.study.permission.AccessLevel;
@@ -10,7 +10,6 @@ import com.gk.study.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
@@ -37,7 +36,7 @@ public class UserController {
     UserService userService;
 
     @Autowired
-    private SimpConfig config;
+    private SgridConf config;
 
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -223,7 +222,7 @@ public class UserController {
             String oldFileName = file.getOriginalFilename();
             String randomStr = UUID.randomUUID().toString();
             newFileName = randomStr + oldFileName.substring(oldFileName.lastIndexOf("."));
-            String filePath =  config.server.mapConf.get("uploadPath") + File.separator + "avatar" + File.separator + newFileName;
+            String filePath =  config.config.get("uploadPath") + File.separator + "avatar" + File.separator + newFileName;
             File destFile = new File(filePath);
             if(!destFile.getParentFile().exists()){
                 destFile.getParentFile().mkdirs();

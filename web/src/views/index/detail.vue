@@ -219,7 +219,7 @@ const selectTab =(index)=> {
 const getThingDetail =()=> {
   detailApi({id: thingId.value}).then(res => {
     detailData.value = res.data
-    detailData.value.cover = BASE_URL + '/api/staticfiles/image/' + detailData.value.cover
+    detailData.value.cover = BASE_URL + '/shopserver/staticfiles/image/' + detailData.value.cover
   }).catch(err => {
     message.error('获取详情失败')
   })
@@ -271,7 +271,7 @@ const getRecommendThing =()=> {
   listThingList({sort: 'recommend'}).then(res => {
     res.data.forEach((item, index) => {
       if (item.cover) {
-        item.cover = BASE_URL + '/api/staticfiles/image/' + item.cover
+        item.cover = BASE_URL + '/shopserver/staticfiles/image/' + item.cover
       }
     })
     console.log(res)

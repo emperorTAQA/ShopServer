@@ -7,6 +7,7 @@ readonly ServerName="ShopServer"
 # rm
 rm ./$ServerName.tar.gz
 rm -r ./target
+rm -r static
 # web 编译
 cd ../web
 
@@ -22,18 +23,18 @@ mvn deploy
 
 # target 统一文件名
 cd target
-mv ./*.jar ./SpringServer.jar
-mv ./*.original ./SpringServer.jar.original
+#mv ./*.jar ./SpringServer.jar
+#mv ./*.original ./SpringServer.jar.original
 
 # target/classes
 cd classes
-cp ./simp.yaml ../../
+cp ./sgrid.yml ../../
 
 # /
 cd ../../
 
 # compile
 # build
-tar -cvf $ServerName.tar.gz ./target ./simp.yaml ./upload ./static
+tar -cvf $ServerName.tar.gz ./target ./sgrid.yml ./upload ./static
 
-rm -r simp.yaml
+rm -r sgrid.yml

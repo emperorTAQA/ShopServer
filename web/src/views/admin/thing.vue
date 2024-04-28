@@ -320,7 +320,7 @@ const handleEdit = (record: any) => {
     }
   }
   if(modal.form.cover) {
-    modal.form.coverUrl = BASE_URL + '/api/staticfiles/image/' + modal.form.cover
+    modal.form.coverUrl = BASE_URL + '/shopserver/staticfiles/image/' + modal.form.cover
     modal.form.cover = undefined
   }
 };
