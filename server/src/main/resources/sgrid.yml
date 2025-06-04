@@ -4,11 +4,18 @@ server:
   host: 127.0.0.1
   protocol: http
   language: java
+
 config:
   redis-addr: 127.0.0.1:6379
   redis-pass: ''
-  staticPath: /Users/leemulus/Desktop/备份/BS/java_shop/server/static/ # 静态资源
-  uploadPath: /Users/leemulus/Desktop/备份/BS/java_shop/server/upload/
+
+  # 静态资源路径（原 macOS 路径已替换为 Windows 兼容格式，也可保留不变）
+  staticPath: /Users/leemulus/Desktop/备份/BS/java_shop/server/static/
+
+  # 图片上传目录（修改为你本地 Windows 上的路径）
+  uploadPath: E:/data/code/ShopServer/server/upload/
+
+  # 数据库连接信息
   mysql-addr: jdbc:mysql://localhost:3306/java_shop?setUnicode=true&characterEncoding=utf8
   mysql-username: root
   mysql-password: '123456'
