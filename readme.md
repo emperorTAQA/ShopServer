@@ -1,13 +1,13 @@
-# 基于Java的商城网站系统设计与实现
+# 基于Java的图书商城网站系统设计与实现
 
-> *一直想做一款管理系统，看了很多优秀的开源项目但是发现没有合适的。于是利用空闲休息时间开始自己写了一套管理系统。现将部分源码开源，如需完整源码，可以联系客服微信购买：leecumuluz20*
+> 
 
 
 ### 演示地址
 
-前台地址： http://shop.gitapp.cn
+前台地址：http:
 
-后台地址：http://shop.gitapp.cn/admin
+后台地址：http:
 
 后台管理帐号：
 
@@ -37,11 +37,11 @@
 
 #### 后端运行步骤
 
-1. 下载JDK 1.8，并配置环境变量
+1. 下载JDK 17，并配置环境变量
 
 2. 下载本代码后，使用IntelliJ IDEA打开server目录
 
-3. 配置server目录中的application.yml文件，配置BASE_LOCATION、DB_NAME、数据库账号密码
+3. 配置server目录中的sgrid.yml   修改uploadpath改为自己的本地目录 数据库配置
 
 4. 安装mysql 5.7数据库，并创建数据库，创建SQL如下：
 ```
@@ -59,10 +59,7 @@ mysql> source D:/xxx/xxx/xxx.sql;
 
 #### 前端运行步骤
 
-1. 安装node 16.14
-
-2. 修改web/src/store下的constansts.ts文件中的BASE_URL，改成你自己后端的地址
-
+1. 安装nodejs
 3. cmd命令进入web目录下，安装依赖，执行:
 ```
 npm install 
@@ -78,18 +75,13 @@ npm run dev
 
 首页
 
-![](https://raw.githubusercontent.com/geeeeeeeek/shop/master/server/upload/img/a.png)
+
 
 
 后台页面
 
-![](https://raw.githubusercontent.com/geeeeeeeek/shop/master/server/upload/img/b.png)
 
 
- 
 
-### 付费咨询
 
-微信：leecumuluz20
-
-### 打赏作者
+### 
